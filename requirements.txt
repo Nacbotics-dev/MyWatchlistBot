@@ -10,3 +10,5 @@ ratelimiter
 schedule==1.1.0
 geopy==2.2.0
 apscheduler==3.6.3
+requests
+bs4
