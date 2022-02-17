@@ -1,3 +1,6 @@
+import os
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'MyWatchlist.settings')
+
 from apscheduler.schedulers.blocking import BlockingScheduler
 
 
