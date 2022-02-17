@@ -8,7 +8,6 @@ from ratelimiter import RateLimiter
 from Watchlist.models import User,Watchlist
 from django.shortcuts import render,redirect
 from VeronicaNLP.web.Movies.TV import TVSHOWS
-from MyWatchlist.settings import WEBHOOK_URL,WEBHOOK_TOKEN
 from django.views.decorators.http import require_http_methods
 from VeronicaNLP.web.Movies.Tvshows4mobile import Tvshows4mobile
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -17,7 +16,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 
 tv = TVSHOWS()
 O2tv = Tvshows4mobile()
-
+WEBHOOK_TOKEN = "1928565537:AAEUG6GAPoWZm3zcDuCkjal3kA-kgKCEbSA"
 bot = telebot.TeleBot(WEBHOOK_TOKEN,parse_mode='HTML') #Telegram Bot API
 
 sched = BlockingScheduler()
