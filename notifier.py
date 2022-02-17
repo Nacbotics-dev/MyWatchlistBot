@@ -69,11 +69,10 @@ def new_episode_notfication():
 		print(f"Currently handling {cmd['filename']}")
 		missed_episodes = O2tv.return_missed_episodes(cmd)
 
-		bot.send_message(movie.creator.chat_id,f"checking {cmd['filename']}")
-
 		if type(missed_episodes) is str:
 			bot.send_message(movie.creator.chat_id,missed_episodes)
 		else:
+			bot.send_message(movie.creator.chat_id,f"checking {cmd['filename']}")
 			try:
 				last_episode_id = return_id(missed_episodes,cmd["episode"])
 				#[id for (id,j) in enumerate(missed_episodes) if j == cmd["episode"]][0]

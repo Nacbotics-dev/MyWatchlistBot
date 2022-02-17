@@ -182,7 +182,7 @@ def reply_msg(message):
 			new_watchlist(message)
 
 		elif message.text == "👾 Report BUG 👾":
-			msg = "Hey are u experiencing difficulty? \nyou can report it and ww will fix it ASAP"
+			msg = "Hey are u experiencing difficulty? \nyou can report it and we will fix it ASAP"
 			bot.send_message(user_detail['chat_id'],msg,reply_markup=report_bug_btn())
 		else:
 			pass
