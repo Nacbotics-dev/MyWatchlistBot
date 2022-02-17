@@ -231,10 +231,10 @@ class Replace(object):
         text = re.sub(r"twentieth", " 20th ", text)
         text = re.sub(r"thirtieth", " 30th ", text)
         
-        text = re.sub(r"hundred", "00", text)
-        text = re.sub(r"thousand", "000", text)
-        text = re.sub(r"million", "000000", text)
-        text = re.sub(r"billion", "000000000", text)    
+        text = re.sub(r" hundred ", "00", text)
+        text = re.sub(r" thousand ", "000", text)
+        text = re.sub(r" million ", "000000", text)
+        text = re.sub(r" billion ", "000000000", text)    
         return(text)
     
 

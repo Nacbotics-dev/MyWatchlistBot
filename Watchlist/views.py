@@ -7,14 +7,11 @@ from .models import User,Watchlist
 from ratelimiter import RateLimiter
 from django.http import HttpResponse
 from django.shortcuts import render,redirect
+from VeronicaNLP.web.Movies.TV import TVSHOWS
 from MyWatchlist.settings import WEBHOOK_URL,WEBHOOK_TOKEN
 from django.views.decorators.http import require_http_methods
-from apscheduler.schedulers.background import BackgroundScheduler
-
-
-
-from VeronicaNLP.web.Movies.TV import TVSHOWS
 from VeronicaNLP.web.Movies.Tvshows4mobile import Tvshows4mobile
+from apscheduler.schedulers.background import BackgroundScheduler
 
 
 
