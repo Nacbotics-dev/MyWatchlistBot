@@ -28,15 +28,6 @@ bot = telebot.TeleBot(WEBHOOK_TOKEN,parse_mode='HTML') #Telegram Bot API
 
 sched = BlockingScheduler()
 
-# @sched.scheduled_job('interval', minutes=3)
-# def timed_job():
-#     print('This job is run every three minutes.')
-
-# @sched.scheduled_job('cron', day_of_week='mon-fri', hour=17)
-# def scheduled_job():
-#     print('This job is run every weekday at 5pm.')
-
-# sched.start()
 
 
 def user_watchlists():
@@ -66,7 +57,7 @@ def return_id(data,text):
 		else:
 			pass
 
-@sched.scheduled_job('cron', second=5)
+@sched.scheduled_job('cron', hour=1)
 def new_episode_notfication():
 	movies = user_watchlists()
 
@@ -78,7 +69,6 @@ def new_episode_notfication():
 		if type(missed_episodes) is str:
 			bot.send_message(movie.creator.chat_id,missed_episodes)
 		else:
-			bot.send_message(movie.creator.chat_id,f"checking {cmd['filename']}")
 			try:
 				last_episode_id = return_id(missed_episodes,cmd["episode"])
 				#[id for (id,j) in enumerate(missed_episodes) if j == cmd["episode"]][0]
