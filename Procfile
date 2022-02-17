@@ -1,0 +1,1 @@
+web: gunicorn MyWatchlist.wsgi --log-file -
