@@ -1,7 +1,11 @@
-import os
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'MyWatchlist.settings')
+# import os
+# os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'MyWatchlist.settings')
 
 from apscheduler.schedulers.blocking import BlockingScheduler
+
+from django.conf import settings
+
+settings.configure(DEBUG=True)
 
 
 import time,telebot,json
