@@ -56,7 +56,7 @@ def return_id(data,text):
 		else:
 			pass
 
-@sched.scheduled_job('cron', hour=1)
+@sched.scheduled_job('interval', minutes=10)
 def new_episode_notfication():
 	movies = user_watchlists()
 
