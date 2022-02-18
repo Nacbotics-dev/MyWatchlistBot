@@ -6,8 +6,7 @@ application = get_wsgi_application()
 
 
 from apscheduler.schedulers.blocking import BlockingScheduler
-
-
+import tzlocal
 import time,telebot,json
 from telebot.types import *
 from django.db.models import Q
@@ -26,7 +25,7 @@ O2tv = Tvshows4mobile()
 WEBHOOK_TOKEN = "1928565537:AAEUG6GAPoWZm3zcDuCkjal3kA-kgKCEbSA"
 bot = telebot.TeleBot(WEBHOOK_TOKEN,parse_mode='HTML') #Telegram Bot API
 
-sched = BlockingScheduler()
+sched = BlockingScheduler(timezone=str(tzlocal.get_localzone()))
 
 
 

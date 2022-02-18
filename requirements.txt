@@ -12,3 +12,4 @@ geopy==2.2.0
 apscheduler==3.6.3
 requests
 bs4
+tzlocal
